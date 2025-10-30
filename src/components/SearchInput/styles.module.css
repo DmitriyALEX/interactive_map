@@ -1,0 +1,52 @@
+.input_container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  border: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid #ccc;
+  font: 15px/24px "Muli", sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  position: relative;
+  background: transparent;
+  outline: none;
+}
+
+.input + .focus_border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 99;
+  overflow: hidden;
+}
+
+.input + .focus_border::before,
+.input + .focus_border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #7473bd;
+  transition: 0.4s;
+}
+
+.input + .focus_border::after {
+  left: auto;
+  right: 0;
+}
+
+.input:focus + .focus_border::before,
+.input:focus + .focus_border::after {
+  width: 50%;
+  transition: 0.4s;
+}
